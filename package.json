@@ -1,0 +1,35 @@
+{
+  "name": "emojione-png-sprites",
+  "version": "0.1.0",
+  "description": "A collection of EmojiOne PNG spritesheets resized for various sprite sizes. Import only the spritesheet(s) you need.",
+  "main": "Brocfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deveo/emojione-png-sprites.git"
+  },
+  "keywords": [
+    "emojione",
+    "emoji",
+    "sprite",
+    "sprites",
+    "spritesheet",
+    "spritesheets"
+  ],
+  "author": "lolmaus <lolmaus@gmail.com> (Andrey Mikhaylov)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deveo/emojione-png-sprites/issues"
+  },
+  "homepage": "https://github.com/deveo/emojione-png-sprites#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bluebird": "^3.4.7",
+    "fs-extra-promise": "^0.4.1",
+    "lodash": "^4.17.4",
+    "sprity": "^1.0.8",
+    "sprity-emojione-scss": "1.0.4"
+  }
+}

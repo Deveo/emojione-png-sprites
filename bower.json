@@ -1,0 +1,28 @@
+{
+  "name": "emojione-png-sprites",
+  "authors": [
+    "lolmaus (Andrey Mikhaylov) <lolmaus@gmail.com>"
+  ],
+  "description": "A collection of EmojiOne PNG spritesheets resized for various sprite sizes. Import only the spritesheet(s) you need.",
+  "main": "",
+  "keywords": [
+    "emojione",
+    "emoji",
+    "sprite",
+    "spritesheet",
+    "sprites",
+    "spritesheets"
+  ],
+  "license": "MIT",
+  "homepage": "Deveo/emojione-png-sprites",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "emojione": "^2.2.7"
+  }
+}
