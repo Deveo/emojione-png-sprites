@@ -66,8 +66,8 @@ This makes the `sprity-emojione` mixin available. It accepts three arguments:
 
 | # | Type            | Default value | Description                                                                                                                                                        |
 |:--|:----------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Unitless number | <required>    | Desired emoji size in px.                                                                                                                                          |
-| 2 | String          | <required>    | Path to the directory on your web server where the spritesheets are located. Can be stylesheet-relative, root-relative or full (with protocol). No trailing slash! |
+| 1 | Unitless number | required      | Desired emoji size in px.                                                                                                                                          |
+| 2 | String          | required      | Path to the directory on your web server where the spritesheets are located. Can be stylesheet-relative, root-relative or full (with protocol). No trailing slash! |
 | 3 | Map             | `()`          | A map where keys are retina scale factors and values are corresponding sprite sizes, e. g. `(2: 48, 3: 64)`.                                                       |
 
 
