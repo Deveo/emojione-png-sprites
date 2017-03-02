@@ -1,6 +1,6 @@
 {
   "name": "emojione-png-sprites",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A collection of EmojiOne PNG spritesheets resized for various sprite sizes. Import only the spritesheet(s) you need.",
   "main": "Brocfile.js",
   "scripts": {
