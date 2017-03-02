@@ -67,7 +67,7 @@ This repo provides [EmojiOne](https://emojione.com) spritesheets in the followin
 | sprite-64.png          | 2,4M      |
 | sprite-128.png         | 4,0M      |
 | style.scss             | 20K       |
- 
+
 The reason other sizes aren't provided is because other stylesheets turn out larger in file size than next stylesheet whose sprite size is a fraction of two (e. g. file size for 49 is larger than file size for 64).
 
 As for size 256, [sprity](https://github.com/sprity/sprity) crashes when source emoji size is larger than 128, so we were unable to generate it. If you need sprite size of 256, you should revert to the official EmojiOne spritesheet of size 512.
@@ -82,12 +82,12 @@ To avoid downloading all spritesheets from this repo, it recommended that you im
 
 1. Open latest commit in this GitHub repo in order to fix the version.
 2. Open the spritesheet that you need from the `dist/` folder.
-3. Click `Raw` to open the file directly.
+3. Click `Download` or `Raw` to open the file directly.
 4. Copy the URL.
 5. Use it in Bower like this:
 
         bower install -S emojione-png-sprite-<size>=<url>
-        
+
 6. Repeat for every size that you need.
 7. Import the Sass file in a similar way: 
 
