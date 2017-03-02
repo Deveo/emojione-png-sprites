@@ -30,6 +30,6 @@
     "fs-extra-promise": "^0.4.1",
     "lodash": "^4.17.4",
     "sprity": "^1.0.8",
-    "sprity-emojione-scss": "1.0.4"
+    "sprity-emojione-scss": "1.1.0"
   }
 }

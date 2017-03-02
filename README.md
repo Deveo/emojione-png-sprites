@@ -6,6 +6,21 @@ There's also a Sass mixin that generates CSS for given sizes with support for re
 
 
 
+## Table of content
+
+* [Why](#why)
+* [Available sizes](#available-sizes)
+* [Including spritesheets and Sass mixins into your project](#including-spritesheets-and-sass-mixins-into-your-project)
+* [Serving from a free CDN](#serving-from-a-free-cdn)
+* [Using the Sass mixin](#using-the-sass-mixin)
+    * [Example usage](#example-usage)
+* [Development](#development)
+    * [Rebuilding stylesheets](#rebuilding-stylesheets)
+    * [Updating file size table](#updating-file-size-table)
+    * [Updating the table of content](#updating-the-table-of-content)
+
+
+
 ## Why
 
 [EmojiOne](https://emojione.com) is an awesome & free collection of emoji.
@@ -22,20 +37,50 @@ Unfortunately, its PNG sprites aren't very usable because:
 ## Available sizes
 
 This repo provides [EmojiOne](https://emojione.com) spritesheets in the following sprite sizes: 10-32, 64, 128.
+
+| Filename & sprtie size | Fize size |
+|:-----------------------|:----------|
+| sprite-10.png          | 317K      |
+| sprite-11.png          | 366K      |
+| sprite-12.png          | 407K      |
+| sprite-13.png          | 464K      |
+| sprite-14.png          | 507K      |
+| sprite-15.png          | 562K      |
+| sprite-16.png          | 574K      |
+| sprite-17.png          | 669K      |
+| sprite-18.png          | 713K      |
+| sprite-19.png          | 778K      |
+| sprite-20.png          | 820K      |
+| sprite-21.png          | 885K      |
+| sprite-22.png          | 940K      |
+| sprite-23.png          | 1008K     |
+| sprite-24.png          | 1,1M      |
+| sprite-25.png          | 1,1M      |
+| sprite-26.png          | 1,2M      |
+| sprite-27.png          | 1,3M      |
+| sprite-28.png          | 1,3M      |
+| sprite-29.png          | 1,4M      |
+| sprite-30.png          | 1,4M      |
+| sprite-31.png          | 1,5M      |
+| sprite-32.png          | 1,3M      |
+| sprite-48.png          | 2,4M      |
+| sprite-64.png          | 2,4M      |
+| sprite-128.png         | 4,0M      |
+| style.scss             | 20K       |
  
-The reason other sizes aren't provided is because missing stylesheets turn out larger in file size than a larger stylesheet whose sprite size is a fraction of two (e. g. file size for 49 is larger than file size for 64).
+The reason other sizes aren't provided is because other stylesheets turn out larger in file size than next stylesheet whose sprite size is a fraction of two (e. g. file size for 49 is larger than file size for 64).
 
-As for size 256, [sprity](https://github.com/sprity/sprity) crashes when source emoji size is larger than 128. :(
+As for size 256, [sprity](https://github.com/sprity/sprity) crashes when source emoji size is larger than 128, so we were unable to generate it. If you need sprite size of 256, you should revert to the official EmojiOne spritesheet of size 512.
 
 
 
-## Including spritesheets into your project
+## Including spritesheets and Sass mixins into your project
 
 If your frontend doesn't have a build pipeline, skip this step and instead download files manually.
 
 To avoid downloading all spritesheets from this repo, it recommended that you import individual spritesheets that you need with Bower.
 
-1. Open latest commit in this repo in order to fix the version.
+1. Open latest commit in this GitHub repo in order to fix the version.
 2. Open the spritesheet that you need from the `dist/` folder.
 3. Click `Raw` to open the file directly.
 4. Copy the URL.
@@ -49,6 +94,23 @@ To avoid downloading all spritesheets from this repo, it recommended that you im
         bower install -S emojione-png-sprite-sass=<url>
 
 Then you need to configure your build pipeline to include the spritesheets into your app distribution, e. g. move to the `public/` folder.
+
+
+
+## Serving from a free CDN
+
+[RawGit.com](http://rawgit.com/) is a free CDN for GitHub-hosted files powered by [StackPath.com](https://www.stackpath.com/).
+
+Here's how you can use it.
+
+1. Open latest commit in this GitHub repo in order to fix the version (very important!).
+2. Open the spritesheet that you need from the `dist/` folder.
+3. Click `Raw` to open the file directly.
+4. Copy the URL.
+5. Paste the URL into the top field on [RawGit.com](http://rawgit.com/).
+6. Copy the resulting URL from the bottom-left field. That's your permanent CDN URL!
+
+Note that RawGit is very reliable, but it provides no guarantees and should not be used for applications that demand 100% uptime.
 
 
 
@@ -143,13 +205,34 @@ only screen and (min-resolution: 3dppx) {
 
 
 
-### Development: rebuilding stylesheets
+## Development
 
-1. Install Node and [pngcrush](https://pmt.sourceforge.io/pngcrush/).
-2. Clone this repo and `cd` into it.
+### Rebuilding stylesheets
+
+1. Install [Node](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [pngcrush](https://pmt.sourceforge.io/pngcrush/)
+2. Clone this repo and `cd` into it
 3. Install dependencies:
     * `bower install`
-    * `npm install` or `yarn install`
-4. Run `node index.js`.
+    * `yarn install`
+4. Run `node index.js`
 
 Regenerating and compressing stylesheets will take some time.
+
+
+
+
+### Updating file size table
+
+Use `ls -alhF` to get file sizes.
+
+Use this regex to extract size and filename: 
+
+```js
+/^.*?([\d,]+[A-Z]).*?([\w|.|-]+)$/gm
+```
+
+
+
+### Updating the table of content
+
+Use https://lolmaus.github.io/tocdown/ with first two checkboxes enabled.

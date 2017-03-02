@@ -521,6 +521,13 @@ sprity-css@^1.0.2:
     bluebird "^2.9.24"
     fs-extra "^0.18.0"
 
+sprity-emojione-scss@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sprity-emojione-scss/-/sprity-emojione-scss-1.1.0.tgz#b0f5a63fa1851094026a3509c01d96f49f50dfab"
+  dependencies:
+    bluebird "^2.9.24"
+    fs-extra "^0.18.0"
+
 sprity-lwip@^1.0.3:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/sprity-lwip/-/sprity-lwip-1.0.7.tgz#2bf51d7aff35206503f5bbcddd200b00c6bda26e"
