@@ -40,35 +40,34 @@ This repo provides [EmojiOne](https://emojione.com) spritesheets in the followin
 
 | Filename & sprtie size | Fize size |
 |:-----------------------|:----------|
-| sprite-10.png          | 317K      |
-| sprite-11.png          | 366K      |
-| sprite-12.png          | 407K      |
-| sprite-13.png          | 464K      |
-| sprite-14.png          | 507K      |
-| sprite-15.png          | 562K      |
-| sprite-16.png          | 574K      |
-| sprite-17.png          | 669K      |
-| sprite-18.png          | 713K      |
-| sprite-19.png          | 778K      |
-| sprite-20.png          | 820K      |
-| sprite-21.png          | 885K      |
-| sprite-22.png          | 940K      |
-| sprite-23.png          | 1008K     |
-| sprite-24.png          | 1,1M      |
-| sprite-25.png          | 1,1M      |
-| sprite-26.png          | 1,2M      |
-| sprite-27.png          | 1,3M      |
-| sprite-28.png          | 1,3M      |
-| sprite-29.png          | 1,4M      |
-| sprite-30.png          | 1,4M      |
-| sprite-31.png          | 1,5M      |
-| sprite-32.png          | 1,3M      |
-| sprite-48.png          | 2,4M      |
-| sprite-64.png          | 2,4M      |
-| sprite-128.png         | 4,0M      |
-| style.scss             | 20K       |
+| sprite-10.png          | 329K      |
+| sprite-11.png          | 379K      |
+| sprite-12.png          | 430K      |
+| sprite-13.png          | 477K      |
+| sprite-14.png          | 560K      |
+| sprite-15.png          | 603K      |
+| sprite-16.png          | 606K      |
+| sprite-17.png          | 713K      |
+| sprite-18.png          | 778K      |
+| sprite-19.png          | 837K      |
+| sprite-20.png          | 897K      |
+| sprite-21.png          | 934K      |
+| sprite-22.png          | 1007K     |
+| sprite-23.png          | 1,1M      |
+| sprite-24.png          | 1,2M      |
+| sprite-25.png          | 1,2M      |
+| sprite-26.png          | 1,3M      |
+| sprite-27.png          | 2,2M      |
+| sprite-28.png          | 1,4M      |
+| sprite-29.png          | 2,4M      |
+| sprite-30.png          | 1,5M      |
+| sprite-31.png          | 2,6M      |
+| sprite-32.png          | 1,5M      |
+| sprite-64.png          | 3,3M      |
+| sprite-128.png         | 7,2M      |
+| style.scss             | 41K       |
 
-The reason other sizes aren't provided is because other stylesheets turn out larger in file size than next stylesheet whose sprite size is a fraction of two (e. g. file size for 49 is larger than file size for 64).
+The reason other sizes aren't provided is because other stylesheets turn out larger in file size than next stylesheet whose sprite size is a power of two (e. g. file size for 48 is larger than file size for 64).
 
 As for size 256, [sprity](https://github.com/sprity/sprity) crashes when source emoji size is larger than 128, so we were unable to generate it. If you need sprite size of 256, you should revert to the official EmojiOne spritesheet of size 512.
 

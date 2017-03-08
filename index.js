@@ -8,7 +8,7 @@ const sharp   = require('sharp')
 
 
 
-const sizes         = [..._.range(10, 32), 32, 48, 64, 128]
+const sizes         = [..._.range(10, 32), 32, 64, 128]
 // const sizes         = [20]
 const srcPath       = 'bower_components/emojione/assets/png_512x512'
 const tmpPath       = 'tmp'
