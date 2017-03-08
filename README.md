@@ -129,7 +129,7 @@ This makes the `sprity-emojione` mixin available. It accepts three arguments:
 |:--|:----------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1 | Unitless number | required      | Desired emoji size in px.                                                                                                                                          |
 | 2 | String          | required      | Path to the directory on your web server where the spritesheets are located. Can be stylesheet-relative, root-relative or full (with protocol). No trailing slash! |
-| 3 | Map             | `()`          | A map where keys are retina scale factors and values are corresponding sprite sizes, e. g. `(2: 48, 3: 64)`.                                                       |
+| 3 | Map             | `()`          | A map where keys are retina scale factors and values are corresponding sprite sizes, e. g. `(2: 64)`.                                                              |
 
 
 
@@ -137,12 +137,11 @@ This makes the `sprity-emojione` mixin available. It accepts three arguments:
 
 Say, we want emoji to be 20px in size. For retina screens, we want the emoji to be displayed in double and triple quality.
 
-40 and 60 sprite sizes aren't available, so we'll use larger ones: 48 and 64.
+40 and 60 sprite sizes aren't available, so we'll use a larger one: 64.
 
 The following example assumes that the spritesheets are available on the web server under these paths:
 
     /assets/emojione-png-sprites/sprite-20.png
-    /assets/emojione-png-sprites/sprite-48.png
     /assets/emojione-png-sprites/sprite-64.png
 
 Import the mixin and invoke it like this:
@@ -150,25 +149,34 @@ Import the mixin and invoke it like this:
 ```scss
 @import "bower_components/emojione-png-sprites-sass/style.scss";
 
-@include sprity-emojione(20, "/assets/emojione-png-sprites", (2: 48, 3: 64));
+@include sprity-emojione(20, "/assets/emojione-png-sprites", (2: 64);
 ```
 
 This mixin invocation will make EmojiOne emoji have CSS width and height of **20**px.
 
 For non-retina screens, the spritesheet with sprite size **20** will be used.
 
-For retina screens with a scale factor of **2** (DPI >= 192), the spritesheet with sprite size **48** will be used.
-
-For retina screens with a scale factor of **3** (DPI >= 256), the spritesheet with sprite size **64** will be used.
+For retina screens with a scale factor of **2** (DPI >= 192), the spritesheet with sprite size **64** will be used.
 
 The resulting CSS will be:
 
 ```css
+// Applied when importing the spritesheet
 .emojione {
-    width:  20px;
-    height: 20px;
-    background-image: url("/assets/emojione-png-sprites/sprite-20.png");
-    background-size:  20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  font-size: inherit;
+  line-height: normal;
+  text-indent: -9999em;
+  vertical-align: middle;
+}
+
+// Applied when calling the mixin
+.emojione {
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/emojione-png-sprites/sprite-20.png");
+  background-size: 20px;
 }
 
 @media
@@ -176,27 +184,17 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (        min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) {
-    .emojione {
-        background-image: url("/assets/emojione-png-sprites/sprite-48.png");
-    }
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 3),
-only screen and (        min-device-pixel-ratio: 3),
-only screen and (min-resolution: 288dpi),
-only screen and (min-resolution: 3dppx) {
-    .emojione {
-        background-image: url("/assets/emojione-png-sprites/sprite-64.png");
-    }
+  .emojione {
+    background-image: url("/assets/emojione-png-sprites/sprite-64.png");
+  }
 }
 
 .emojione-1f46e-1f3fc {
-    background-position: 0 0px;
+  background-position: 0 0px;
 }
 
 .emojione-0023-20e3 {
-    background-position: 0 -20px;
+  background-position: 0 -20px;
 }
 
 /* ... */
