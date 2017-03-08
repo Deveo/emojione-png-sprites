@@ -51,6 +51,7 @@ sizes
     return promise
       .then(() => fs.ensureDirAsync(tmpResizePath))
       .then(() => fs.ensureDirAsync(tmpSpritePath))
+      .then(() => fs.ensureDirAsync(distPath))
 
       .then(() => {
         console.log(`Resizing emoji to size ${size}`)
@@ -77,14 +78,15 @@ sizes
           callback =>
             sprite
               .create({
-                  src:       path.join(tmpResizePath, '*.png'),
-                  out:       tmpSpritePath,
-                  name:      `sprite-${size}`,
-                  style:     styleName,
-                  processor: 'emojione-scss',
-                  margin:    0,
-                  prefix:    'emojione',
-                  dimension: [ { ratio: 1, dpi: 1 } ],
+                  src:         path.join(tmpResizePath, '*.png'),
+                  out:         tmpSpritePath,
+                  name:        `sprite-${size}`,
+                  style:       styleName,
+                  processor:   'emojione-scss',
+                  margin:      0,
+                  prefix:      'emojione',
+                  dimension:   [ { ratio: 1, dpi: 1 } ],
+                  orientation: 'binary-tree',
                 },
                 callback
               )

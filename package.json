@@ -31,6 +31,6 @@
     "lodash": "^4.17.4",
     "sharp": "^0.17.2",
     "sprity": "^1.0.8",
-    "sprity-emojione-scss": "1.1.0"
+    "sprity-emojione-scss": "1.2.0"
   }
 }
