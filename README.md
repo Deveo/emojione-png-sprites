@@ -125,38 +125,38 @@ Note that you may need to configure Sass include paths and adjust the import pat
 
 This makes the `sprity-emojione` mixin available. It accepts three arguments:
 
-| # | Type            | Default value | Description                                                                                                                                                        |
-|:--|:----------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Unitless number | required      | Desired emoji size in px.                                                                                                                                          |
-| 2 | String          | required      | Path to the directory on your web server where the spritesheets are located. Can be stylesheet-relative, root-relative or full (with protocol). No trailing slash! |
-| 3 | Map             | `()`          | A map where keys are retina scale factors and values are corresponding sprite sizes, e. g. `(2: 64)`.                                                              |
+| # | Type            | Default value | Description                                                                                                                                                                          |
+|:--|:----------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | Unitless number | required      | Desired emoji size in px. It's used both as a width/height value of emoji HTML elements and as a sprite size of the non-retina spritesheet.                                          |
+| 2 | String          | required      | Path to the directory on your web server where the spritesheets are located. Can be stylesheet-relative, root-relative or full (with protocol). No trailing slash!                   |
+| 3 | Map             | `()`          | Use this argument to generate additional spritesheets for retina screens. It's a map where keys are retina scale factors and values are corresponding sprite sizes, e. g. `(2: 64)`. |
 
 
 
 ### Example usage
 
-Say, we want emoji to be 20px in size. For retina screens, we want the emoji to be displayed in double and triple quality.
+Say, we want emoji HTML elements to be 20px in size. For non-retina screens, we'll need spites of the same size: 20px. Fo For retina screens, we want the emoji to be displayed in double and triple quality.
 
-40 and 60 sprite sizes aren't available, so we'll use a larger one: 64.
+But 40 and 60 sprite sizes aren't available, so we'll use the next size larger than 40, which is **64**. It's also larger than 60, so we'll need only one additional spritesheet for both 2x and 3x retina.
 
-The following example assumes that the spritesheets are available on the web server under these paths:
+We're gonna serve the spritesheets from these paths on the web server:
 
     /assets/emojione-png-sprites/sprite-20.png
     /assets/emojione-png-sprites/sprite-64.png
 
-Import the mixin and invoke it like this:
+Import the mixin into your Sass stylesheet and invoke it like this:
 
 ```scss
 @import "bower_components/emojione-png-sprites-sass/style.scss";
 
-@include sprity-emojione(20, "/assets/emojione-png-sprites", (2: 64);
+@include sprity-emojione(20, "/assets/emojione-png-sprites", (2: 64));
 ```
 
 This mixin invocation will make EmojiOne emoji have CSS width and height of **20**px.
 
 For non-retina screens, the spritesheet with sprite size **20** will be used.
 
-For retina screens with a scale factor of **2** (DPI >= 192), the spritesheet with sprite size **64** will be used.
+For retina screens with a scale factor of **2** or more (DPI >= 192), the spritesheet with sprite size **64** will be used.
 
 The resulting CSS will be:
 
