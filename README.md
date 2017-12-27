@@ -4,6 +4,8 @@ This repo provides [EmojiOne](https://emojione.com) spritesheets in various spri
 
 There's also a Sass mixin that generates CSS for given sizes with support for retina.
 
+This repo provides emoji from the old version `2` of EmojiOne. This is because version 2 is free to use by everyone, whereas version 3 requires purchasing a costy license for commercial use. See license information [below](#license).
+
 
 
 ## Table of content
@@ -13,11 +15,12 @@ There's also a Sass mixin that generates CSS for given sizes with support for re
 * [Including spritesheets and Sass mixins into your project](#including-spritesheets-and-sass-mixins-into-your-project)
 * [Serving from a free CDN](#serving-from-a-free-cdn)
 * [Using the Sass mixin](#using-the-sass-mixin)
-    * [Example usage](#example-usage)
+  * [Example usage](#example-usage)
+* [License](#license)
 * [Development](#development)
-    * [Rebuilding stylesheets](#rebuilding-stylesheets)
-    * [Updating file size table](#updating-file-size-table)
-    * [Updating the table of content](#updating-the-table-of-content)
+  * [Rebuilding stylesheets](#rebuilding-stylesheets)
+  * [Updating file size table](#updating-file-size-table)
+  * [Updating the table of content](#updating-the-table-of-content)
 
 
 
@@ -202,6 +205,14 @@ only screen and (min-resolution: 2dppx) {
 
 
 
+## License
+
+Code from this repo is provided under the [MIT](https://github.com/Deveo/emojione-png-sprites/blob/gen-1/LICENSE.md) license.
+
+Graphical artwork is a derivative work based on the [2.2.7 branch](https://github.com/emojione/emojione/tree/2.2.7) of EmojiOne Artwork, distributed under the [Creative Commons Attribution 4.0 International](https://github.com/emojione/emojione/blob/2.2.7/LICENSE.md) license.
+
+
+
 ## Development
 
 ### Rebuilding stylesheets
@@ -233,3 +244,4 @@ Use this regex to extract size and filename:
 ### Updating the table of content
 
 Use https://lolmaus.github.io/tocdown/ with first two checkboxes enabled.
+
